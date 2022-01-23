@@ -20,3 +20,8 @@ class Solution:
             dest.append(rem_dest)
             
         return dest
+
+    def divideString2(self, s: str, k: int, fill: str) -> List[str]:
+        grps = [s[i:i+k] for i in range(0, len(s), k)]
+        grps[-1] += (fill * (k - len(grps[-1])))
+        return grps
